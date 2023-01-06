@@ -13,6 +13,7 @@ export default function TextForm(props) {
     //    setText("you have clicked on handleUPCLICK");
         let upperText=text.toUpperCase();
         setText(upperText);
+        props.showAlert("changed to upper case","success")
     //    console.log("button was clicked");
     }
     const handleLowClick=()=>{
@@ -55,7 +56,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary" onClick={handleCpyClick}>Copy the text</button>
 
     </div>
-    <div className="container mb-3">
+    <div className="container mb-3" style={{color:props.mode=== 'dark'?'white':'black'}}>
         <h1>your text summary</h1>
         <p>{text.split(" ").length-1} words and {text.length} characters</p>
         <p>{0.008 *text.split(" ").length} minutes read</p>
