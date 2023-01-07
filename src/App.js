@@ -24,13 +24,7 @@ function App() {
       setAlert(null)
     },1500)
   }
-  const removeBodyCls=()=>{
-    document.body.classList.remove('bg-danger');
-    document.body.classList.remove('bg-danger');
-  }
-  const toggleMode =(cls)=>{
-    removeBodyCls();
-    document.body.classList.add('bg-'+cls)
+  const toggleMode =()=>{
     if(mode==='light'){
       setMode('dark');
       document.body.style.backgroundColor='#042743';
@@ -54,7 +48,7 @@ function App() {
     
       <Routes>
         <Route exact  path="/" element={ <TextForm heading ="text util react project" mode={mode} showAlert={showAlert}/>} />
-        <Route exact path="/about" element={<About mode={mode}/>} />
+        <Route exact path="/about" element={<About/>} />
       </Routes>
    
     {/* <TextForm heading ="text util react project" mode={mode} showAlert={showAlert}/> */}
